@@ -4,11 +4,7 @@ get_header();
 $current_specs = isset($_GET['specialization']) ? explode(',', $_GET['specialization']) : [];
 $current_cities = isset($_GET['city']) ? explode(',', $_GET['city']) : [];
 
-$available_specs = get_active_terms_from_url('specialization', 'city');
-$available_cities = get_active_terms_from_url('city', 'specialization');
 
-$available_specs_ids = wp_list_pluck($available_specs, 'term_id');
-$available_cities_ids = wp_list_pluck($available_cities, 'term_id');
 
 $specs_args = [
     'taxonomy'   => 'specialization',
